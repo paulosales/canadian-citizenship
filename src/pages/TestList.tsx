@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../store/hooks';
-import { resetTest } from '../store/quizSlice';
 import { TOTAL_TESTS } from '../types';
 import type { TestProgress } from '../types';
 import TestButton from './TestButton';
