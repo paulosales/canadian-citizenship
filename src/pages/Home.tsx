@@ -10,13 +10,7 @@ export default function Home() {
   return (
     <div className="page home-page">
       <div className="hero">
-        <div className="hero-flag">
-          <div className="flag-red" />
-          <div className="flag-white">
-            <span className="flag-maple">🍁</span>
-          </div>
-          <div className="flag-red" />
-        </div>
+        <img src="https://flagcdn.com/ca.svg" alt="Canada Flag" className="hero-image" width={200}/>
         <h1 className="hero-title">Canadian Citizenship Test</h1>
         <p className="hero-subtitle">
           Prepare for your Canadian citizenship test with 60 practice tests and flashcard study
