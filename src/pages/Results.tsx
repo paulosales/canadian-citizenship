@@ -10,14 +10,16 @@ export default function Results() {
   const dispatch = useAppDispatch();
   const id = parseInt(testId ?? '1', 10);
 
-  const test = useAppSelector(s => s.quiz.tests.find(t => t.testId === id));
+  const test = useAppSelector((s) => s.quiz.tests.find((t) => t.testId === id));
   const questions = getQuestionsForTest(id);
 
   if (!test || test.status !== 'completed') {
     return (
       <div className="page">
         <p>No results found for Test {id}.</p>
-        <button className="btn btn-primary" onClick={() => navigate('/tests')}>Back to Tests</button>
+        <button className="btn btn-primary" onClick={() => navigate('/tests')}>
+          Back to Tests
+        </button>
       </div>
     );
   }
@@ -55,9 +57,15 @@ export default function Results() {
 
       {/* Actions */}
       <div className="results-actions">
-        <button className="btn btn-primary" onClick={handleRetry}>↺ Retake Test</button>
-        <button className="btn btn-secondary" onClick={() => navigate('/tests')}>All Tests</button>
-        <button className="btn btn-secondary" onClick={() => navigate('/flashcards')}>Study Flashcards</button>
+        <button className="btn btn-primary" onClick={handleRetry}>
+          ↺ Retake Test
+        </button>
+        <button className="btn btn-secondary" onClick={() => navigate('/tests')}>
+          All Tests
+        </button>
+        <button className="btn btn-secondary" onClick={() => navigate('/flashcards')}>
+          Study Flashcards
+        </button>
       </div>
 
       {/* Answer review */}
@@ -67,7 +75,10 @@ export default function Results() {
           const userAnswer = answers[i] ?? -1;
           const correct = userAnswer === q.correctAnswer;
           return (
-            <div key={q.id} className={`review-item ${correct ? 'review-correct' : 'review-wrong'}`}>
+            <div
+              key={q.id}
+              className={`review-item ${correct ? 'review-correct' : 'review-wrong'}`}
+            >
               <div className="review-header">
                 <span className="review-num">Q{i + 1}</span>
                 <span className="review-cat">{q.category}</span>
@@ -86,7 +97,9 @@ export default function Results() {
                       <span className="option-letter">{String.fromCharCode(65 + j)}</span>
                       {opt}
                       {j === q.correctAnswer && <span className="review-tick"> ✓</span>}
-                      {j === userAnswer && j !== q.correctAnswer && <span className="review-cross"> ✗</span>}
+                      {j === userAnswer && j !== q.correctAnswer && (
+                        <span className="review-cross"> ✗</span>
+                      )}
                     </div>
                   );
                 })}
@@ -97,11 +110,11 @@ export default function Results() {
                   {q.sourceText && (
                     <div className="feedback-source">
                       <span className="source-icon">📖</span>
-                      <div className="source-text">
-                        "{q.sourceText}"
-                      </div>
+                      <div className="source-text">"{q.sourceText}"</div>
                       {q.sourcePage && (
-                        <span className="source-page">— Discover Canada, p.&nbsp;{q.sourcePage}</span>
+                        <span className="source-page">
+                          — Discover Canada, p.&nbsp;{q.sourcePage}
+                        </span>
                       )}
                     </div>
                   )}

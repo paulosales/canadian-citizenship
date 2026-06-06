@@ -15,6 +15,7 @@ export interface TestProgress {
   score: number | null;
   passed: boolean | null;
   answers: (number | null)[];
+  enabled: boolean;
   startedAt: string | null;
   completedAt: string | null;
 }
@@ -34,4 +35,5 @@ export interface AppState {
 export const PASS_SCORE = 15;
 export const QUESTIONS_PER_TEST = 20;
 export const TOTAL_TESTS = 60;
+export const ENABLED_TESTS = 3;
 export const TIME_LIMIT_MINUTES = 45;

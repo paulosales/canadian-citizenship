@@ -40,9 +40,9 @@
     ],
     "correctAnswer": 2,
     "explanation": "Every Canadian citizen aged 18 or older has the right to vote in federal, provincial, and municipal elections.",
-    "category": "Rights",
+    "category": "Modern Canada",
     "sourcePage": 25,
-    "sourceText": "This led to the Official Languages every citizen over the age of 18 may vote. sculptor of historical figures.\nYou can find this under the Rights section."
+    "sourceText": "Most Canadians of Asian descent had in the past been denied the vote in federal and provincial elections. In 1948 the last of these, the Japanese-Canadians, gained the right to vote. Aboriginal people were granted the vote in 1960. Today every citizen over the age of 18 may vote."
   },
   {
     "id": 4,
@@ -200,14 +200,14 @@
     "options": [
       "The King or Queen",
       "The Governor General",
-      "The Prime Minister",
-      "The Speaker of the House"
+      "The Speaker of the House",
+      "The Prime Minister"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "explanation": "The Prime Minister is the Head of Government and leader of the party with the most seats in the House of Commons.",
-    "category": "Government",
-    "sourcePage": 35,
-    "sourceText": "The name of the Commissioner, who represents the federal government in my territory, is______________________________________________________ Federal Government The name of the Premier…\nYou can find this under the Government section."
+    "category": "How Canadians Govern Themselves",
+    "sourcePage": 29,
+    "sourceText": "There is a clear distinction in Canada between the head of state—the Sovereign—and the head of government—the Prime Minister, who actually directs the governing of the country."
   },
   {
     "id": 15,
@@ -363,16 +363,16 @@
     "id": 25,
     "question": "In what year was the current Canadian flag adopted?",
     "options": [
+      "1965",
       "1867",
       "1931",
-      "1965",
       "1982"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "explanation": "The current Canadian flag was adopted on February 15, 1965, replacing the Canadian Red Ensign.",
     "category": "Symbols",
-    "sourcePage": 39,
-    "sourceText": "You must have adequate knowledge Canadian icon As an expression of national pride after the First the flag of the Royal Military College, Kingston, for the championship Stanley Cup, donated by of English or French to…\nYou can find this under the Symbols section."
+    "sourcePage": 38,
+    "sourceText": "A new Canadian flag was raised for the first time in 1965."
   },
   {
     "id": 26,
@@ -1171,18 +1171,18 @@
   },
   {
     "id": 80,
-    "question": "What is the name of Canada's national sports?",
+    "question": "What is the role of the courts in Canada?",
     "options": [
-      "Hockey and basketball",
-      "Lacrosse and ice hockey",
-      "Lacrosse and curling",
-      "Ice hockey and football"
+      "To make laws",
+      "To enforce laws",
+      "The courts settle disputes",
+      "To advise the government"
     ],
-    "correctAnswer": 1,
-    "explanation": "Lacrosse (summer) and ice hockey (winter) are Canada's official national sports.",
-    "category": "Symbols",
-    "sourcePage": 27,
-    "sourceText": "Many major league surgeon at McGill University in Montreal, and Canadian advances in science and technology below. sports boast Canadian talent and in the national was known as “the greatest living Canadian.” are world…\nYou can find this under the Symbols section."
+    "correctAnswer": 2,
+    "explanation": "The courts in Canada are responsible for settling disputes, interpreting laws, and ensuring justice is served according to the legal framework.",
+    "category": "The Justice System",
+    "sourcePage": 36,
+    "sourceText": "The courts settle disputes and the police enforce the laws."
   },
   {
     "id": 81,
@@ -1336,18 +1336,18 @@
   },
   {
     "id": 91,
-    "question": "What percentage of Canada's exports go to the United States?",
+    "question": "Which agreement was enacted in 1994, expanding Canada's free trade partnership to include both the United States and Mexico?",
     "options": [
-      "50%",
-      "63%",
-      "75%",
-      "80%"
+      "The G8 Industrialized Nations Alliance",
+      "The Trans-Pacific Commerce Accord",
+      "The North American Free Trade Agreement (NAFTA)",
+      "The Canada-Mexico Economic Growth Treaty"
     ],
     "correctAnswer": 2,
-    "explanation": "About 75% of Canada's exports go to the United States, making the US-Canada relationship the world's largest bilateral trading partnership.",
-    "category": "Economy",
-    "sourcePage": 43,
-    "sourceText": "Today, of dollars worth of energy products, industrial working Canadians now have jobs in service together in unity,” symbolizes our close ties and the economy of many areas of the country still goods, machinery,…\nYou can find this under the Economy section."
+    "explanation": "The text states that following the 1988 free trade enactment with the United States, Mexico became a partner in 1994 in the broader North American Free Trade Agreement (NAFTA).",
+    "category": "Canada’s Economy",
+    "sourcePage": 42,
+    "sourceText": "In 1988, Canada enacted free trade with the United States. Mexico became a partner in 1994 in the broader North American Free Trade Agreement (NAFTA), with over 444 million people and over $1 trillion in merchandise trade in 2008."
   },
   {
     "id": 92,
@@ -1510,9 +1510,9 @@
     ],
     "correctAnswer": 1,
     "explanation": "The Royal Proclamation of 1763 recognized Aboriginal peoples' land rights and established a framework for treaties between the Crown and Aboriginal peoples.",
-    "category": "History",
-    "sourcePage": 11,
-    "sourceText": "Territorial rights were first Today, the term Aboriginal peoples refers to three guaranteed through the Royal Proclamation of distinct groups: English and French The Acadians are the descendants of French 1763 by King…\nYou can find this under the History section."
+    "category": "Who We Are",
+    "sourcePage": 10,
+    "sourceText": "Aboriginal and treaty rights are in the Canadian Constitution. Territorial rights were first guaranteed through the Royal Proclamation of 1763 by King George III, and established the basis for negotiating treaties with the newcomers—treaties that were not always fully respected"
   },
   {
     "id": 103,
@@ -1666,18 +1666,18 @@
   },
   {
     "id": 113,
-    "question": "What is the obligation to obey the law in Canada?",
+    "question": "What are the three branches of government?",
     "options": [
-      "Only if you agree with the law",
-      "All Canadians must obey the law, regardless of personal beliefs",
-      "Laws apply only to citizens, not permanent residents",
-      "Only criminal laws must be obeyed"
+      "Legislative, Executive, Judicial",
+      "Federal, Provincial, Municipal",
+      "House of Commons, Senate, Prime Minister",
+      "Governor General, Prime Minister, Cabinet"
     ],
-    "correctAnswer": 1,
-    "explanation": "Everyone in Canada must obey the law. Canada's laws apply to all people in Canada, including citizens, permanent residents, and visitors.",
-    "category": "Citizenship",
-    "sourcePage": 3,
-    "sourceText": "They must Canada. commitment to the rule of law and to the obey Canada’s laws and respect the rights and institutions of parliamentary government. freedoms of others.\nYou can find this under the Citizenship section."
+    "correctAnswer": 0,
+    "explanation": "The three branches of government in Canada are the Legislative, Executive, and Judicial branches.",
+    "category": "How Canadians Govern Themselves",
+    "sourcePage": 29,
+    "sourceText": "The interplay between the three branches of government—the Executive, Legislative and Judicial—which work together but also sometimes in creative tension, helps to secure the rights and freedoms of Canadians."
   },
   {
     "id": 114,
@@ -1831,18 +1831,18 @@
   },
   {
     "id": 124,
-    "question": "What is the role of political parties in Canada?",
+    "question": "Which branch of government does the Head of State belong to?",
     "options": [
-      "Enforce laws and policies",
-      "Organize citizens with similar views and seek to form the government",
-      "Appoint judges and senators",
-      "Oversee immigration policy"
+      "Executive",
+      "Judicial",
+      "Legislative",
+      "None of the above"
     ],
-    "correctAnswer": 1,
-    "explanation": "Political parties organize people with shared values and goals to participate in elections and, if successful, form the government.",
-    "category": "Government",
+    "correctAnswer": 2,
+    "explanation": "The Head of State (the King) is part of the Legislative branch, as the Crown is a key component of Parliament, which also includes the House of Commons and the Senate.",
+    "category": "How Canadians Govern Themselves",
     "sourcePage": 29,
-    "sourceText": "The Royal Family’s a role similar to that of the Governor General. the Constitution Act, 1867. laws, approving and monitoring expenditures, example of lifelong service to the community is In the three territories, the…\nYou can find this under the Government section."
+    "sourceText": "Canada’s Head of State is a hereditary Sovereign (Queen or King), who reigns in accordance with the Constitution: the rule of law. The Sovereign is a part of Parliament"
   },
   {
     "id": 125,
@@ -1999,15 +1999,15 @@
     "question": "What are some responsibilities that come with rights in Canada?",
     "options": [
       "Rights have no corresponding responsibilities",
-      "Obeying the law, paying taxes, serving on juries, voting, and respecting others' rights",
       "Only voting and paying taxes",
-      "Only obeying the law"
+      "Only obeying the law",
+      "Obeying the law, serving on juries, voting, and helping others in the community"
     ],
-    "correctAnswer": 1,
-    "explanation": "Rights and responsibilities are linked in Canada: citizens must obey laws, pay taxes, serve on juries, vote, and respect others' rights.",
-    "category": "Citizenship",
+    "correctAnswer": 3,
+    "explanation": "Rights and responsibilities are linked in Canada: citizens must obey laws, pay taxes, serve on juries, vote, and help others in the community.",
+    "category": "Rights and Responsibilities of Citizenship",
     "sourcePage": 9,
-    "sourceText": "Together, these secure for Canadians an 800- “Whereas Canada is founded upon principles Citizenship Responsibilities • Voting in elections — The right to vote comes year old tradition of ordered liberty, which dates…\nYou can find this under the Citizenship section."
+    "sourceText": "In Canada, rights come with responsibilities. These include: Obeying the law..."
   },
   {
     "id": 136,
@@ -2163,16 +2163,16 @@
     "id": 146,
     "question": "What was the Great Deportation (Le Grand Dérangement)?",
     "options": [
-      "The forced migration of Indigenous peoples in the west",
       "The forced removal of Acadians from their lands by the British in 1755",
+      "The forced migration of Indigenous peoples in the west",
       "The deportation of French settlers from Quebec in 1763",
       "The removal of Loyalists from the US"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "explanation": "The Great Deportation (1755) was the forced removal of Acadians from their lands in Nova Scotia by British authorities, scattering them across North America.",
-    "category": "History",
+    "category": "Who We Are",
     "sourcePage": 11,
-    "sourceText": "About 65% of the Aboriginal people are First the Arctic Circle—so much so that poets and songwriters have hailed Canada as the “Great Dominion.” Nations, while 30% are Métis and 4% Inuit. (From Top to Bottom) To…\nYou can find this under the History section."
+    "sourceText": "The Acadians are the descendants of French colonists who began settling in what are now the Maritime provinces in 1604. Between 1755 and 1763, during the war between Britain and France, more than two-thirds of the Acadians were deported from their homeland"
   },
   {
     "id": 147,
@@ -2329,15 +2329,15 @@
     "question": "What is the Canada Health Act?",
     "options": [
       "A law establishing the RCMP health program",
-      "Federal legislation establishing criteria for provincial health insurance programs",
       "A provincial health care act",
+      "Federal legislation that ensures common elements and a basic standard of coverage",
       "An act funding private health care"
     ],
-    "correctAnswer": 1,
-    "explanation": "The Canada Health Act is federal legislation that sets criteria for provincial health insurance programs to receive federal funding.",
+    "correctAnswer": 2,
+    "explanation": "The Canada Health Act is federal legislation that ensures common elements and a basic standard of coverage for provincial health insurance programs.",
     "category": "Modern Canada",
     "sourcePage": 55,
-    "sourceText": "The Canadian Experience—A Civic Literacy Society) Parliament of Canada Project for the New Mainstream www.parl.gc.ca Canada www.cdnexperience.ca Federal Programs and Services I Can Vote!\nYou can find this under the Modern Canada section."
+    "sourceText": "The Canada Health Act ensures common elements and a basic standard of coverage."
   },
   {
     "id": 158,
@@ -2501,8 +2501,8 @@
     "correctAnswer": 1,
     "explanation": "La Francophonie (Organisation internationale de la Francophonie) is an international organization of French-speaking countries. Canada is an active member.",
     "category": "Modern Canada",
-    "sourcePage": 47,
-    "sourceText": "Quebec films, music, literary works and food have international stature, especially in La Francophonie, an association of French-speaking nations.\nYou can find this under the Modern Canada section."
+    "sourcePage": 24,
+    "sourceText": "In 1970, Canada helped found La Francophonie, an international association of French-speaking countries."
   },
   {
     "id": 169,
@@ -2656,18 +2656,18 @@
   },
   {
     "id": 179,
-    "question": "Who was the first female Governor General of Canada?",
+    "question": "Which level of government is responsible for matters such as defence, foreign policy, and citizenship?",
     "options": [
-      "Adrienne Clarkson",
-      "Jeanne Sauvé",
-      "Michelle Jean",
-      "Julie Payette"
+      "Municipal government",
+      "Provincial government",
+      "Federal government",
+      "Territorial government"
     ],
-    "correctAnswer": 1,
-    "explanation": "Jeanne Sauvé was the first female Governor General of Canada, serving from 1984 to 1990.",
-    "category": "History",
-    "sourcePage": 59,
-    "sourceText": "Patrick’s Day Parade, Montreal, Quebec Jimmy James Canoeing on the Rideau Canal Canadian Tourism Commission Highland dancer at Glengarry Mario Groleau Highland Games, Maxville, Ontario Inside Cover Queen Elizabeth II,…\nYou can find this under the History section."
+    "correctAnswer": 2,
+    "explanation": "The federal government handles matters of national and international concern, including defence, foreign policy, currency, and citizenship.",
+    "category": "How Canadians Govern Themselves",
+    "sourcePage": 28,
+    "sourceText": "the federal government takes responsibility for matters of national and international concern. These include defence, foreign policy, interprovincial trade and communications, currency, navigation, criminal law and citizenship."
   },
   {
     "id": 180,
@@ -2824,15 +2824,15 @@
     "question": "Who is Terry Fox?",
     "options": [
       "A war hero",
-      "A Canadian who ran the Marathon of Hope across Canada with one leg to raise money for cancer research",
       "An NHL hockey player",
-      "A Canadian Prime Minister"
+      "A Canadian Prime Minister",
+      "A Canadian who ran the Marathon of Hope across Canada with one leg to raise money for cancer research"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "explanation": "Terry Fox was a Canadian athlete who, with one leg amputated due to cancer, ran across Canada in 1980 to raise funds for cancer research. He is a national hero.",
     "category": "Modern Canada",
-    "sourcePage": 27,
-    "sourceText": "One of the greatest hockey players of worldwide system of standard time zones. saved 16 million lives research, telecommunications and other fields. all time, Wayne Gretzky, played for the Edmonton • Mike Lazaridis and…\nYou can find this under the Modern Canada section."
+    "sourcePage": 26,
+    "sourceText": "In 1980, Terry Fox, a British Columbian who lost his right leg to cancer at the age of 18, began a cross-country run, the “Marathon of Hope,” to raise money for cancer research. He became a hero to Canadians. While he did not finish the run and ultimately lost his battle with cancer, his legacy continues through yearly"
   },
   {
     "id": 191,
@@ -2995,9 +2995,9 @@
     ],
     "correctAnswer": 1,
     "explanation": "Federal jurisdiction covers national matters (defence, criminal law, immigration), while provinces manage health care, education, and property law.",
-    "category": "Government",
-    "sourcePage": 33,
-    "sourceText": "Federal • Members of Parliament • National • International Trade The dates and location are on your voter information card. (MPs) Defence • Aboriginal Affairs • Foreign Policy • Immigration • Citizenship (shared) •…\nYou can find this under the Government section."
+    "category": "How Canadians Govern Themselves",
+    "sourcePage": 28,
+    "sourceText": "In our federal state, the federal government takes responsibility for matters of national and international concern. These include defence, foreign policy, interprovincial trade and communications, currency, navigation, criminal law and citizenship. The provinces are responsible for municipal government, education, health, natural resources, property and civil rights, and highways."
   },
   {
     "id": 202,

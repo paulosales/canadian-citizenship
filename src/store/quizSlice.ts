@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TestProgress, AppState } from '../types';
-import { TOTAL_TESTS, QUESTIONS_PER_TEST } from '../types';
+import { TOTAL_TESTS, QUESTIONS_PER_TEST, ENABLED_TESTS } from '../types';
 
 const STORAGE_KEY = 'citizenship_quiz_progress';
 
@@ -10,6 +10,7 @@ function createInitialTests(): TestProgress[] {
     status: 'not-started' as const,
     score: null,
     passed: null,
+    enabled: i < ENABLED_TESTS,
     answers: Array(QUESTIONS_PER_TEST).fill(null),
     startedAt: null,
     completedAt: null,
@@ -58,7 +59,7 @@ const quizSlice = createSlice({
   initialState,
   reducers: {
     startTest(state, action: PayloadAction<number>) {
-      const test = state.tests.find(t => t.testId === action.payload);
+      const test = state.tests.find((t) => t.testId === action.payload);
       if (test && test.status === 'not-started') {
         test.status = 'in-progress';
         test.startedAt = new Date().toISOString();
@@ -75,9 +76,12 @@ const quizSlice = createSlice({
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    submitAnswer(state, action: PayloadAction<{ testId: number; questionIndex: number; answer: number }>) {
+    submitAnswer(
+      state,
+      action: PayloadAction<{ testId: number; questionIndex: number; answer: number }>
+    ) {
       const { testId, questionIndex, answer } = action.payload;
-      const test = state.tests.find(t => t.testId === testId);
+      const test = state.tests.find((t) => t.testId === testId);
       if (test && test.status === 'in-progress') {
         test.answers[questionIndex] = answer;
       }
@@ -86,7 +90,7 @@ const quizSlice = createSlice({
     },
     completeTest(state, action: PayloadAction<{ testId: number; correctAnswers: boolean[] }>) {
       const { testId, correctAnswers } = action.payload;
-      const test = state.tests.find(t => t.testId === testId);
+      const test = state.tests.find((t) => t.testId === testId);
       if (test) {
         const score = correctAnswers.filter(Boolean).length;
         test.status = 'completed';
@@ -98,7 +102,7 @@ const quizSlice = createSlice({
       saveToStorage(state);
     },
     resetTest(state, action: PayloadAction<number>) {
-      const test = state.tests.find(t => t.testId === action.payload);
+      const test = state.tests.find((t) => t.testId === action.payload);
       if (test) {
         test.status = 'not-started';
         test.score = null;
@@ -118,7 +122,7 @@ const quizSlice = createSlice({
     },
     markFlashcard(state, action: PayloadAction<{ questionId: number; known: boolean }>) {
       const { questionId, known } = action.payload;
-      const existing = state.flashcards.find(f => f.questionId === questionId);
+      const existing = state.flashcards.find((f) => f.questionId === questionId);
       if (existing) {
         existing.known = known;
         existing.reviewed += 1;

@@ -11,7 +11,7 @@ export default function Quiz() {
   const dispatch = useAppDispatch();
   const id = parseInt(testId ?? '1', 10);
 
-  const test = useAppSelector(s => s.quiz.tests.find(t => t.testId === id));
+  const test = useAppSelector((s) => s.quiz.tests.find((t) => t.testId === id));
   const questions = getQuestionsForTest(id);
 
   const [currentQ, setCurrentQ] = useState(0);
@@ -35,7 +35,7 @@ export default function Quiz() {
       handleFinish();
       return;
     }
-    const timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
+    const timer = setInterval(() => setTimeLeft((t) => t - 1), 1000);
     return () => clearInterval(timer);
   }, [started, timeLeft, test?.status, handleFinish]);
 
@@ -53,12 +53,16 @@ export default function Quiz() {
   }, [test?.status, id, dispatch, navigate, test]);
 
   if (!test || !questions.length) {
-    return <div className="page"><p>Test not found.</p></div>;
+    return (
+      <div className="page">
+        <p>Test not found.</p>
+      </div>
+    );
   }
 
   const q = questions[currentQ];
   const answered = answers[currentQ] ?? null;
-  const progress = (answers.filter(a => a !== null).length / QUESTIONS_PER_TEST) * 100;
+  const progress = (answers.filter((a) => a !== null).length / QUESTIONS_PER_TEST) * 100;
 
   const mins = Math.floor(timeLeft / 60);
   const secs = timeLeft % 60;
@@ -75,7 +79,7 @@ export default function Quiz() {
     setShowFeedback(false);
     setSelectedAnswer(null);
     if (currentQ < QUESTIONS_PER_TEST - 1) {
-      setCurrentQ(q => q + 1);
+      setCurrentQ((q) => q + 1);
     } else {
       handleFinish();
     }
@@ -84,7 +88,7 @@ export default function Quiz() {
   function handlePrev() {
     setShowFeedback(false);
     setSelectedAnswer(null);
-    if (currentQ > 0) setCurrentQ(q => q - 1);
+    if (currentQ > 0) setCurrentQ((q) => q - 1);
   }
 
   function jumpTo(idx: number) {
@@ -104,7 +108,9 @@ export default function Quiz() {
         <div className={`quiz-timer ${timeWarning ? 'timer-warning' : ''}`}>
           ⏱ {mins}:{secs.toString().padStart(2, '0')}
         </div>
-        <div className="quiz-qcount">{currentQ + 1} / {QUESTIONS_PER_TEST}</div>
+        <div className="quiz-qcount">
+          {currentQ + 1} / {QUESTIONS_PER_TEST}
+        </div>
       </div>
 
       {/* Progress bar */}
@@ -120,7 +126,9 @@ export default function Quiz() {
           else if (answers[i] !== null) {
             cls += answers[i] === questions[i].correctAnswer ? ' q-dot-correct' : ' q-dot-wrong';
           }
-          return <button key={i} className={cls} onClick={() => jumpTo(i)} title={`Question ${i + 1}`} />;
+          return (
+            <button key={i} className={cls} onClick={() => jumpTo(i)} title={`Question ${i + 1}`} />
+          );
         })}
       </div>
 
@@ -149,8 +157,12 @@ export default function Quiz() {
               >
                 <span className="option-letter">{String.fromCharCode(65 + i)}</span>
                 <span className="option-text">{opt}</span>
-                {currentAnswer !== null && i === q.correctAnswer && <span className="option-icon">✓</span>}
-                {currentAnswer !== null && i === currentAnswer && i !== q.correctAnswer && <span className="option-icon">✗</span>}
+                {currentAnswer !== null && i === q.correctAnswer && (
+                  <span className="option-icon">✓</span>
+                )}
+                {currentAnswer !== null && i === currentAnswer && i !== q.correctAnswer && (
+                  <span className="option-icon">✗</span>
+                )}
               </button>
             );
           })}

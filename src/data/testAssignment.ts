@@ -35,5 +35,3 @@ export function getQuestionsForTest(testId: number): Question[] {
 
   return result;
 }
-
-

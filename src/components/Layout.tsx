@@ -21,7 +21,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <button
             className="hamburger"
-            onClick={() => setMenuOpen(o => !o)}
+            onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
           >
             <span className={`hamburger-bar ${menuOpen ? 'open' : ''}`} />
@@ -30,20 +30,45 @@ export default function Layout({ children }: LayoutProps) {
           </button>
 
           <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-            <NavLink to="/" end onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
-            <NavLink to="/tests" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Practice Tests</NavLink>
-            <NavLink to="/flashcards" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Flashcards</NavLink>
-            <NavLink to="/progress" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>My Progress</NavLink>
+            <NavLink
+              to="/"
+              end
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/tests"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            >
+              Practice Tests
+            </NavLink>
+            <NavLink
+              to="/flashcards"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            >
+              Flashcards
+            </NavLink>
+            <NavLink
+              to="/progress"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            >
+              My Progress
+            </NavLink>
           </nav>
         </div>
       </header>
 
-      <main className="main-content">
-        {children}
-      </main>
+      <main className="main-content">{children}</main>
 
       <footer className="footer">
-        <p>Canada Citizenship Quiz &mdash; Study tool for the citizenship test. Pass: 15/20 (75%)</p>
+        <p>
+          Canada Citizenship Quiz &mdash; Study tool for the citizenship test. Pass: 15/20 (75%)
+        </p>
       </footer>
     </div>
   );
