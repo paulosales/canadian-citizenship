@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { markFlashcard, resetFlashcards } from '../store/quizSlice';
-import { questions } from '../data/testAssignment';
+import { getQuestionsForTest, questions } from '../data/testAssignment';
 
 type FilterMode = 'all' | 'unknown' | 'known';
 
 export default function Flashcards() {
   const dispatch = useAppDispatch();
-  const flashcards = useAppSelector((s) => s.quiz.flashcards);
+  const { flashcards, tests } = useAppSelector((s) => s.quiz);
   const [filter, setFilter] = useState<FilterMode>('all');
   const [currentIdx, setCurrentIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -15,11 +15,14 @@ export default function Flashcards() {
 
   const knownIds = new Set(flashcards.filter((f) => f.known).map((f) => f.questionId));
   const unknownIds = new Set(flashcards.filter((f) => !f.known).map((f) => f.questionId));
+  const enabledTests = tests.filter((test) => test.enabled);
+  const enabledQuestionsMap = new Map(enabledTests.flatMap((test) => getQuestionsForTest(test.testId).map((question) => [question.id, question])));
 
-  const filteredQuestions = questions.filter((q) => {
-    if (filter === 'known') return knownIds.has(q.id);
-    if (filter === 'unknown') return unknownIds.has(q.id);
-    return true;
+  const filteredQuestions = questions.filter((question) => {
+    if (filter === 'known') return knownIds.has(question.id);
+    if (filter === 'unknown') return unknownIds.has(question.id);
+
+    return enabledQuestionsMap.has(question.id);
   });
 
   const total = filteredQuestions.length;
@@ -58,7 +61,7 @@ export default function Flashcards() {
     <div className="page flashcards-page">
       <div className="page-header">
         <h1>Flashcards</h1>
-        <p className="page-subtitle">{questions.length} questions to study</p>
+        <p className="page-subtitle">{total} questions to study</p>
       </div>
 
       {/* Stats */}
@@ -72,7 +75,7 @@ export default function Flashcards() {
           <span className="fc-stat-label">Still Learning</span>
         </div>
         <div className="fc-stat">
-          <span className="fc-stat-num">{questions.length - reviewedCount}</span>
+          <span className="fc-stat-num">{total - reviewedCount}</span>
           <span className="fc-stat-label">Not Reviewed</span>
         </div>
         <button className="btn btn-outline-small" onClick={() => setShowConfirmReset(true)}>
@@ -111,7 +114,7 @@ export default function Flashcards() {
             }}
           >
             {f === 'all'
-              ? `All (${questions.length})`
+              ? `All (${total})`
               : f === 'known'
                 ? `Known (${knownCount})`
                 : `Learning (${reviewedCount - knownCount})`}
