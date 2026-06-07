@@ -3,6 +3,7 @@ import { resetTest } from '../store/quizSlice';
 import type { TestProgress } from '../types';
 
 function statusLabel(t: TestProgress) {
+  if (!t.enabled) return { text: 'Not ready', cls: 'status-not-started' };
   if (t.status === 'not-started') return { text: 'Not Started', cls: 'status-not-started' };
   if (t.status === 'in-progress') return { text: 'In Progress', cls: 'status-in-progress' };
   if (t.passed === true) return { text: `Passed ${t.score}/20`, cls: 'status-passed' };
