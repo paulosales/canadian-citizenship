@@ -766,18 +766,18 @@
   },
   {
     "id": 52,
-    "question": "Who were the Fathers of Confederation?",
+    "question": "Who was Sir John Alexander Macdonald?",
     "options": [
-      "The first Prime Ministers of Canada",
-      "The leaders who worked to create Canada in 1867",
-      "The first Senators of Canada",
-      "The leaders of the French colonies"
+      "A politian that opposed Confederation",
+      "The first Prime Minister of Canada",
+      "A revolutionary that fought for first nations rights",
+      "A important leader of the French colonies"
     ],
     "correctAnswer": 1,
-    "explanation": "The Fathers of Confederation were the political leaders from British North American colonies who worked to create Canada in 1867.",
-    "category": "History",
+    "explanation": "Sir John A. Macdonald was the first Prime Minister of Canada, serving from 1867 to 1873 and again from 1878 to 1891.",
+    "category": "Canada’s History",
     "sourcePage": 19,
-    "sourceText": "He was a the first Prime Minister of the Dominion of Canada 1873 – Prince Edward Island lawyer in Kingston, Ontario, a gifted politician The Fathers of Confederation established the Dominion of Canada on July 1, 1867,…\nYou can find this under the History section."
+    "sourceText": "In 1867, Sir John Alexander Macdonald, a Father of Confederation, became Canada’s first Prime Minister. Born in Scotland on January 11, 1815, he came to Upper Canada as a child. He was a lawyer in Kingston, Ontario, a gifted politician and a colourful personality. Parliament has recognized January 11 as Sir John A. Macdonald Day. His portrait is on the $10 bill."
   },
   {
     "id": 53,
