@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { startTest, submitAnswer, completeTest } from '../store/quizSlice';
 import { getQuestionsForTest } from '../data/testAssignment';
-import { QUESTIONS_PER_TEST, TIME_LIMIT_MINUTES } from '../types';
+import { QUESTIONS_PER_TEST, TIME_LIMIT_MINUTES } from '../consts';
 
 export default function Quiz() {
   const { testId } = useParams<{ testId: string }>();

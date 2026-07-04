@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../store/hooks';
-import { TOTAL_TESTS } from '../types';
+import { PASS_SCORE, QUESTIONS_PER_TEST, TOTAL_TESTS } from '../consts';
 import type { TestProgress } from '../types';
 import TestButton from './TestButton';
 
@@ -25,7 +25,7 @@ export default function TestList() {
       <div className="page-header">
         <h1>Practice Tests</h1>
         <p className="page-subtitle">
-          {TOTAL_TESTS} practice tests · 20 questions each · Pass: 15/20 (75%)
+          {TOTAL_TESTS} practice tests · {QUESTIONS_PER_TEST} questions each · Pass: {PASS_SCORE}/{QUESTIONS_PER_TEST} ({(PASS_SCORE / QUESTIONS_PER_TEST) * 100}%)
         </p>
         <div className="progress-summary">
           <span>

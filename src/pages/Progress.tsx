@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { resetAllProgress } from '../store/quizSlice';
-import { TOTAL_TESTS, QUESTIONS_PER_TEST, PASS_SCORE } from '../types';
+import { TOTAL_TESTS, QUESTIONS_PER_TEST, PASS_SCORE } from '../consts';
 
 export default function Progress() {
   const navigate = useNavigate();

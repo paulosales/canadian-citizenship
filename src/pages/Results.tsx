@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { resetTest } from '../store/quizSlice';
 import { getQuestionsForTest } from '../data/testAssignment';
-import { PASS_SCORE, QUESTIONS_PER_TEST } from '../types';
+import { PASS_SCORE, QUESTIONS_PER_TEST } from '../consts';
 
 export default function Results() {
   const { testId } = useParams<{ testId: string }>();

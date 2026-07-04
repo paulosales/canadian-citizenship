@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TestProgress, AppState } from '../types';
-import { TOTAL_TESTS, QUESTIONS_PER_TEST, ENABLED_TESTS } from '../types';
+import { TOTAL_TESTS, QUESTIONS_PER_TEST, ENABLED_TESTS } from '../consts';
 
 const STORAGE_KEY = 'citizenship_quiz_progress';
 
