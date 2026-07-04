@@ -15,7 +15,12 @@ export default function Layout({ children }: LayoutProps) {
       <header className="header">
         <div className="header-inner">
           <button className="logo-btn" onClick={() => navigate('/')}>
-            <img src="https://flagcdn.com/ca.svg" alt="Canada Flag" className="hero-image" width={40}/>
+            <img
+              src="https://flagcdn.com/ca.svg"
+              alt="Canada Flag"
+              className="hero-image"
+              width={40}
+            />
             <span className="logo-text">Canada Citizenship Quiz</span>
           </button>
 

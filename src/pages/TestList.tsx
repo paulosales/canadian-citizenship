@@ -3,14 +3,15 @@ import { useAppSelector } from '../store/hooks';
 import { PASS_SCORE, QUESTIONS_PER_TEST, TOTAL_TESTS } from '../consts';
 import type { TestProgress } from '../types';
 import TestButton from './TestButton';
+import { RootState } from '../store';
 
 export default function TestList() {
   const navigate = useNavigate();
-  const tests = useAppSelector((s) => s.quiz.tests);
+  const tests = useAppSelector((state: RootState) => state.quiz.tests);
 
   const total = tests.length;
-  const completed = tests.filter((t) => t.status === 'completed').length;
-  const passed = tests.filter((t) => t.passed === true).length;
+  const completed = tests.filter((test: TestProgress) => test.status === 'completed').length;
+  const passed = tests.filter((test: TestProgress) => test.passed === true).length;
 
   function handleTestClick(test: TestProgress) {
     if (test.status === 'completed') {
@@ -25,7 +26,8 @@ export default function TestList() {
       <div className="page-header">
         <h1>Practice Tests</h1>
         <p className="page-subtitle">
-          {TOTAL_TESTS} practice tests · {QUESTIONS_PER_TEST} questions each · Pass: {PASS_SCORE}/{QUESTIONS_PER_TEST} ({(PASS_SCORE / QUESTIONS_PER_TEST) * 100}%)
+          {TOTAL_TESTS} practice tests · {QUESTIONS_PER_TEST} questions each · Pass: {PASS_SCORE}/
+          {QUESTIONS_PER_TEST} ({(PASS_SCORE / QUESTIONS_PER_TEST) * 100}%)
         </p>
         <div className="progress-summary">
           <span>
@@ -39,7 +41,7 @@ export default function TestList() {
       </div>
 
       <div className="test-grid">
-        {tests.map((test) => {
+        {tests.map((test: TestProgress) => {
           return <TestButton key={test.testId} test={test} onClick={handleTestClick} />;
         })}
       </div>

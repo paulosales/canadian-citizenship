@@ -20,14 +20,21 @@ export interface TestProgress {
   completedAt: string | null;
 }
 
+export interface Answer {
+  testId: number;
+  questionIndex: number;
+  answer: number;
+}
+
 export interface FlashcardProgress {
   questionId: number;
   known: boolean;
   reviewed: number;
 }
 
-export interface AppState {
+export interface QuizState {
   tests: TestProgress[];
+  enabledTestsCount: number;
   flashcards: FlashcardProgress[];
   lastUpdated: string;
 }

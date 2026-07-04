@@ -16,7 +16,11 @@ export default function Flashcards() {
   const knownIds = new Set(flashcards.filter((f) => f.known).map((f) => f.questionId));
   const unknownIds = new Set(flashcards.filter((f) => !f.known).map((f) => f.questionId));
   const enabledTests = tests.filter((test) => test.enabled);
-  const enabledQuestionsMap = new Map(enabledTests.flatMap((test) => getQuestionsForTest(test.testId).map((question) => [question.id, question])));
+  const enabledQuestionsMap = new Map(
+    enabledTests.flatMap((test) =>
+      getQuestionsForTest(test.testId).map((question) => [question.id, question])
+    )
+  );
 
   const filteredQuestions = questions.filter((question) => {
     if (filter === 'known') return knownIds.has(question.id);

@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { TestProgress, AppState } from '../types';
-import { TOTAL_TESTS, QUESTIONS_PER_TEST, ENABLED_TESTS } from '../consts';
+import type { TestProgress, QuizState, Answer } from '../types';
+import { TOTAL_TESTS, QUESTIONS_PER_TEST, ENABLED_TESTS, PASS_SCORE } from '../consts';
 
 const STORAGE_KEY = 'citizenship_quiz_progress';
 
@@ -17,17 +17,17 @@ function createInitialTests(): TestProgress[] {
   }));
 }
 
-function loadFromStorage(): AppState | null {
+function loadFromStorage(): QuizState | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as AppState;
+    return JSON.parse(raw) as QuizState;
   } catch {
     return null;
   }
 }
 
-function saveToStorage(state: AppState) {
+function saveToStorage(state: QuizState) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
@@ -35,13 +35,21 @@ function saveToStorage(state: AppState) {
   }
 }
 
-const saved = loadFromStorage();
+const savedState = loadFromStorage();
 
-const initialState: AppState = saved || {
+const initialState: QuizState = savedState || {
   tests: createInitialTests(),
+  enabledTestsCount: ENABLED_TESTS,
   flashcards: [],
   lastUpdated: new Date().toISOString(),
 };
+
+if (savedState && savedState.enabledTestsCount !== ENABLED_TESTS) {
+  initialState.enabledTestsCount = ENABLED_TESTS;
+  initialState.tests.forEach((test, index) => {
+    test.enabled = index < ENABLED_TESTS;
+  });
+}
 
 // Keep saved data aligned with the configured test count.
 if (initialState.tests.length > TOTAL_TESTS) {
@@ -58,7 +66,7 @@ const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-    startTest(state, action: PayloadAction<number>) {
+    startTest(state: QuizState, action: PayloadAction<number>) {
       const test = state.tests.find((t) => t.testId === action.payload);
       if (test && test.status === 'not-started') {
         test.status = 'in-progress';
@@ -76,10 +84,8 @@ const quizSlice = createSlice({
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    submitAnswer(
-      state,
-      action: PayloadAction<{ testId: number; questionIndex: number; answer: number }>
-    ) {
+
+    submitAnswer(state: QuizState, action: PayloadAction<Answer>) {
       const { testId, questionIndex, answer } = action.payload;
       const test = state.tests.find((t) => t.testId === testId);
       if (test && test.status === 'in-progress') {
@@ -88,20 +94,25 @@ const quizSlice = createSlice({
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    completeTest(state, action: PayloadAction<{ testId: number; correctAnswers: boolean[] }>) {
+
+    completeTest(
+      state: QuizState,
+      action: PayloadAction<{ testId: number; correctAnswers: boolean[] }>
+    ) {
       const { testId, correctAnswers } = action.payload;
       const test = state.tests.find((t) => t.testId === testId);
       if (test) {
         const score = correctAnswers.filter(Boolean).length;
         test.status = 'completed';
         test.score = score;
-        test.passed = score >= 15; // PASS_SCORE
+        test.passed = score >= PASS_SCORE;
         test.completedAt = new Date().toISOString();
       }
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    resetTest(state, action: PayloadAction<number>) {
+
+    resetTest(state: QuizState, action: PayloadAction<number>) {
       const test = state.tests.find((t) => t.testId === action.payload);
       if (test) {
         test.status = 'not-started';
@@ -114,15 +125,18 @@ const quizSlice = createSlice({
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    resetAllProgress(state) {
+
+    resetAllProgress(state: QuizState) {
       state.tests = createInitialTests();
+      state.enabledTestsCount = ENABLED_TESTS;
       state.flashcards = [];
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    markFlashcard(state, action: PayloadAction<{ questionId: number; known: boolean }>) {
+
+    markFlashcard(state: QuizState, action: PayloadAction<{ questionId: number; known: boolean }>) {
       const { questionId, known } = action.payload;
-      const existing = state.flashcards.find((f) => f.questionId === questionId);
+      const existing = state.flashcards.find((flashCard) => flashCard.questionId === questionId);
       if (existing) {
         existing.known = known;
         existing.reviewed += 1;
@@ -132,7 +146,8 @@ const quizSlice = createSlice({
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
     },
-    resetFlashcards(state) {
+
+    resetFlashcards(state: QuizState) {
       state.flashcards = [];
       state.lastUpdated = new Date().toISOString();
       saveToStorage(state);
