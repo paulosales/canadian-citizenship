@@ -62,7 +62,10 @@ describe('quizSlice reducer', () => {
     const state = createState();
     const inProgress = reducer(state, startTest(1));
 
-    const correctAnswers = Array.from({ length: QUESTIONS_PER_TEST }, (_, index) => index < PASS_SCORE);
+    const correctAnswers = Array.from(
+      { length: QUESTIONS_PER_TEST },
+      (_, index) => index < PASS_SCORE
+    );
     const completed = reducer(inProgress, completeTest({ testId: 1, correctAnswers }));
 
     expect(completed.tests[0].status).toBe('completed');

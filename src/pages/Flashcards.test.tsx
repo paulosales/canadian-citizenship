@@ -7,7 +7,9 @@ import Flashcards from './Flashcards';
 import quizReducer from '../store/quizSlice';
 import { ENABLED_TESTS, QUESTIONS_PER_TEST } from '../consts';
 
-function renderFlashcards(flashcards = [] as { questionId: number; known: boolean; reviewed: number }[]) {
+function renderFlashcards(
+  flashcards = [] as { questionId: number; known: boolean; reviewed: number }[]
+) {
   const store = configureStore({
     reducer: { quiz: quizReducer },
     preloadedState: {
